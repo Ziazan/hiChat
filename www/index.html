@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<h1>这里是首页</h1>
+	<button id='sendBtn'>发送消息</button>
+	<script>
+		//与服务器进行连接
+		var socket = io.connect(),
+			button = document.getElementById('sendBtn');
+			button.onclick = function(){
+				//发送一个名为foo的时间，并且传递一个字符串数据‘’hello
+				socket.emit('foo','hello');
+			}
+	</script>
+</body> 
+
+</html>
